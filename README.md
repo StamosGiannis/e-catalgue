@@ -1,4 +1,4 @@
-Περιγραφή Εφαρμογής 
+Περιγραφή Εφαρμογής
 
 Η εφαρμογή μου είναι ένα ολοκληρωμένο σύστημα ηλεκτρονικού καταλόγου που περιλαμβάνει λειτουργίες authentication και authorization. Με τη χρήση της εφαρμογής, ο διαχειριστής (admin) έχει τη δυνατότητα να διαχειρίζεται έναν ηλεκτρονικό κατάλογο προϊόντων. Συγκεκριμένα, ο admin μπορεί να καταχωρεί, να επεξεργάζεται και να διαγράφει προϊόντα, καθώς και να εμφανίζει έναν κατάλογο όλων των χρηστών και των προϊόντων.Η εφαρμογή περιέχει επίσης μπάρες αναζήτησης που επιτρέπουν την αναζήτηση χρηστών με βάση το επώνυμό τους ή προϊόντων με βάση το όνομά τους.
 
@@ -6,8 +6,7 @@
 
 Επιπλέον, έχω υλοποιήσει κρυπτογράφηση κωδικών για την προστασία των κωδικών πρόσβασης. Παρόλα αυτά, η κρυπτογράφηση έχει προσωρινά απενεργοποιηθεί ώστε να επιτρέπεται η σύνδεση κάποιου ως admin μετά την προσθήκη των στοιχείων του χειροκίνητα στη βάση δεδομένων.
 
-
-Application Description 
+Application Description
 
 My application is a comprehensive e-catalogue system that includes authentication and authorization functionalities. Using the application, the administrator (admin) has the ability to manage an electronic product catalog. Specifically, the admin can add, edit, and delete products, as well as view a list of all users and products.The application also includes search bars that allow searching for users by their last name or products by their name.
 
@@ -23,7 +22,7 @@ Tech Stacks:
 
     2.MySQL
 
-    3/Spring
+    3.Spring
 
     4.SpringBoot
 
@@ -64,4 +63,3 @@ http://localhost:8080/customers/dashboard
 
 search product by product name
 http://localhost:8080/customers/search?productName=
-
