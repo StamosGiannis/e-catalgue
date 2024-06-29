@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div th:insert="~{index :: header}"></div>
+<div class="container error-container">
+
+    <h1 class="mb-4">Error</h1>
+    <div class="alert alert-danger" th:text="${errorMessage}">An unexpected error occurred.</div>
+    <a class="btn btn-primary" th:href="@{/admins/dashboard}">Back to Dashboard</a>
+
+</div>
+<div th:insert="~{index :: footer}"></div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

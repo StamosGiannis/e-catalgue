@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Product List</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div th:insert="~{index :: header}"></div>
+<div class="container mt-5">
+
+
+    <form th:action="@{/customers/search}" method="get" class="form-inline mb-3">
+        <input class="form-control mr-2" type="search" name="productName" placeholder="Search by product name" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+
+    <table class="table table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Description</th>
+            <th>Image</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="product : ${productsDTO}">
+            <td th:text="${product.id}">ID</td>
+            <td th:text="${product.productName}">Product Name</td>
+            <td th:text="${product.price}">Price</td>
+            <td th:text="${product.stockQuantity}">Stock</td>
+            <td th:text="${product.description}">Description</td>
+            <td><img th:src="@{${product.imageUrl}}" alt="Product Image" class="img-thumbnail"
+                     style="width: 100px; height: auto;" src=""/></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div th:insert="~{index :: footer}"></div>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Product</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div th:insert="~{index :: header}"></div>
+<div class="container mt-5">
+    <h1 class="mb-4">Search Results</h1>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <a class="btn btn-primary" th:href="@{/admins/products/add}">Add Product</a>
+    </div>
+
+    <form th:action="@{/customers/search}" method="get"  class="form-inline mb-3">
+        <input class="form-control mr-2" type="search" name="productName" placeholder="Search by product name" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+    <div class="row">
+        <div class="col-md-4" th:each="product : ${productsDTO}">
+            <div class="cardss">
+                <img class="cardss-img" th:src="@{${product.imageUrl}}" alt="Product Image">
+                <h2 class="cardss-text" th:text="${product.productName}" th:value="${productName}">Product Name</h2>
+                <p class="cardss-text" th:text="${product.description}">Product Description</p>
+                <div class="cardss-text d-flex justify-content-between">
+                    <div>
+                        <span class="price-label">Price:</span><span class="cardss-price"
+                                                                     th:text="${product.price}"></span>
+                    </div>
+                    <div>
+                        <span class="quantity-label">Stock:</span><span class="cardss-quantity"
+                                                                        th:text="${product.stockQuantity}"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:insert="~{index :: footer}"></div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
